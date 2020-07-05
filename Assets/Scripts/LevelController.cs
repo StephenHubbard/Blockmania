@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class LevelController : MonoBehaviour
 {
@@ -10,5 +12,10 @@ public class LevelController : MonoBehaviour
     public void ScrollBannerTrigger()
     {
         winLabel.GetComponent<Animator>().SetTrigger("playerWins");
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Start Screen");
     }
 }

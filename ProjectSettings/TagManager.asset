@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Planeta
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: Blocks
     uniqueID: 2931081343
+    locked: 0
+  - name: Foreground
+    uniqueID: 1901890521
     locked: 0
   - name: Player
     uniqueID: 3696374545

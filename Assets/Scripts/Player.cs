@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myBodyCollider2D = GetComponent<BoxCollider2D>();
+
+        Time.timeScale = 1;
     }
 
     void Update()

@@ -21,7 +21,6 @@ public class FinishLevel : MonoBehaviour
 
         if (playerColor.r >= winColor.r - Mathf.Epsilon && playerColor.r <= winColor.r + Mathf.Epsilon)
         {
-            print("you win!");
             LevelController levelController = FindObjectOfType<LevelController>();
             levelController.ScrollBannerTrigger();
             GameSession gameSession = FindObjectOfType<GameSession>();
@@ -29,7 +28,7 @@ public class FinishLevel : MonoBehaviour
         }
         else
         {
-            print("wrong color");
+            print("wrong color"); // TODO error animation
         }
     }
 }
