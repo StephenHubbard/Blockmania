@@ -6,12 +6,13 @@ public class FinishLevel : MonoBehaviour
 {
 
     Color winColor;
-    float greenRValue = 0.08904416f;
+    [SerializeField] GameObject winColorMatchBlock;
+    [SerializeField] GameObject playerAnimatorGameObject;
+
 
     private void Start()
     {
-        winColor = GetComponent<SpriteRenderer>().color;
-        winColor.r = greenRValue;
+        winColor = winColorMatchBlock.GetComponent<SpriteRenderer>().color;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,16 +20,15 @@ public class FinishLevel : MonoBehaviour
 
         Color playerColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
 
-        if (playerColor.r >= winColor.r - Mathf.Epsilon && playerColor.r <= winColor.r + Mathf.Epsilon)
+        if (playerColor == winColor)
         {
-            LevelController levelController = FindObjectOfType<LevelController>();
-            levelController.ScrollBannerTrigger();
             GameSession gameSession = FindObjectOfType<GameSession>();
             gameSession.levelComplete = true;
         }
-        else
+        else if (collision.tag == "Player")
         {
-            print("wrong color"); // TODO error animation
+            var playerSprite = playerAnimatorGameObject.GetComponent<Animator>();
+            playerSprite.SetTrigger("wrongColor");
         }
     }
 }

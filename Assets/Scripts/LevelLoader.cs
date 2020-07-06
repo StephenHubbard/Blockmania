@@ -26,6 +26,11 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Options Screen");
     }
 
+    public void LoadLevelSelectorScreen()
+    {
+        SceneManager.LoadScene("Choose Level");
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(currentSceneIndex + 1);
@@ -39,5 +44,15 @@ public class LevelLoader : MonoBehaviour
     public void LoadYouLose()
     {
         SceneManager.LoadScene("Lose Screen");
+    }
+
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("Level 2");
     }
 }

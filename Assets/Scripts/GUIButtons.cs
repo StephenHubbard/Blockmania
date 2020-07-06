@@ -9,6 +9,7 @@ public class GUIButtons : MonoBehaviour
 
     [SerializeField] GameObject retrySymbol;
     [SerializeField] GameObject settingsSymbol;
+    [SerializeField] GameObject settingsMenu;
 
     void Start()
     {
@@ -18,5 +19,17 @@ public class GUIButtons : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void SettingsButton()
+    {
+        Time.timeScale = 0;
+        settingsMenu.SetActive(true);
+    }
+
+    public void ResumeButton()
+    {
+        Time.timeScale = 1;
+        settingsMenu.SetActive(false);
     }
 }

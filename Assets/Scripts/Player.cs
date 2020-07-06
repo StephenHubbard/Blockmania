@@ -15,9 +15,14 @@ public class Player : MonoBehaviour
     BoxCollider2D myBodyCollider2D;
     private Vector2 moveDirection;
 
+    // cached refrences 
+    GameSession gameSession;
+
+
 
     void Start()
     {
+        gameSession = FindObjectOfType<GameSession>();
         myRigidBody = GetComponent<Rigidbody2D>();
         myBodyCollider2D = GetComponent<BoxCollider2D>();
 
@@ -26,8 +31,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        ProcessInputs();
-        Jump();
+        if (!gameSession.levelComplete)
+        {
+            ProcessInputs();
+            Jump();
+        }
     }
 
     private void FixedUpdate()
@@ -44,12 +52,7 @@ public class Player : MonoBehaviour
 
     private void playerMovement()
     {
-        GameSession gameSession = FindObjectOfType<GameSession>();
-        
-        if (!gameSession.levelComplete)
-        {
-            myRigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, myRigidBody.velocity.y);
-        }
+         myRigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, myRigidBody.velocity.y);
     }
 
     private void Jump()
