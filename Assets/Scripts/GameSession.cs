@@ -21,6 +21,9 @@ public class GameSession : MonoBehaviour
     [SerializeField] float oneStar = 3f;
 
     public bool levelComplete = false;
+    public bool levelLose = false;
+    private bool oneTime = true;
+
 
     private void Awake()
     {
@@ -58,30 +61,44 @@ public class GameSession : MonoBehaviour
 
             if (countdownText <= 0)
             {
-                Time.timeScale = 0f;
                 timerText.text = "0";
+                playerLose();
+                levelLose = true;
             }
         }
-        if (levelComplete)
+        if (levelComplete && oneTime)
         {
             checkStarsWon();
         }
     }
 
-    private void checkStarsWon()
+    private void playerLose()
     {
         LevelController levelController = FindObjectOfType<LevelController>();
+        levelController.playerLoseMenu();
+    }
 
-        if (countdownText >= startTimer - threeStar)
+    private void checkStarsWon()
+    {
+        PlayerSession playerSession = FindObjectOfType<PlayerSession>();
+        LevelController levelController = FindObjectOfType<LevelController>();
+
+        if ((countdownText >= startTimer - threeStar) && oneTime == true)
         {
-            levelController.threeStarAnimation();
+                levelController.threeStarAnimation();
+                oneTime = false;
+                playerSession.playerStars += 3;
         }
         else if (countdownText < startTimer - threeStar && countdownText >= startTimer  - twoStar) {
-            levelController.twoStarAnimation();
+                levelController.twoStarAnimation();
+                oneTime = false;
+                playerSession.playerStars += 2;
         }
         else
         {
-            levelController.oneStarAnimation();
+                levelController.oneStarAnimation();
+                oneTime = false;
+                playerSession.playerStars += 1;
         }
     }
 }

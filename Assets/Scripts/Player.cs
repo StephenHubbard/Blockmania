@@ -52,7 +52,11 @@ public class Player : MonoBehaviour
 
     private void playerMovement()
     {
-         myRigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, myRigidBody.velocity.y);
+        myRigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, myRigidBody.velocity.y);
+        if (myRigidBody.velocity.y > 7f)
+        {
+            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 7f);
+        }
     }
 
     private void Jump()
@@ -76,6 +80,12 @@ public class Player : MonoBehaviour
         {
             var hitColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
             GetComponent<SpriteRenderer>().color = hitColor;
+
+            if (!collision.gameObject.CompareTag("Hexagon"))
+            {
+                var hitSize = collision.gameObject.GetComponent<Transform>().lossyScale;
+                GetComponent<Transform>().localScale = hitSize;
+            }
         }
     }
 

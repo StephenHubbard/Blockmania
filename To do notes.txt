@@ -1,0 +1,18 @@
+Blockee Notes
+
+fix wall jump issues?
+
+level complete animation.
+
+accumulate stars.  
+
+world/level progression (need certain amount of stars to progress to certain levels).
+
+save/load system. 
+
+bounce squares. 
+
+change shape / size.  
+
+choose level array + string concat.
+

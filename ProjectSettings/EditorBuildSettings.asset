@@ -12,9 +12,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Choose Level.unity
     guid: c6fa5e7ae310b4c4781396888ead7679
   - enabled: 1
+    path: Assets/Scenes/World Selection.unity
+    guid: adb66418785b7ff4a83c9c4fba18db99
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 7465b09de24141b469cdaa4a3956b8c5
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 992d4bd22345ff84d9def3fdc198b1eb
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: 0a37015b2d4c68d479611a0bdcbd3a73
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: 9336201fb82b4c044b57c4bdd6e6b5d5
+  - enabled: 1
+    path: Assets/Scenes/World 1 Level Selection.unity
+    guid: 5b6acaba479ff1a478e6b50640352da1
   m_configObjects: {}

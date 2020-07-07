@@ -22,6 +22,11 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene("Start Screen");
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(currentSceneIndex + 1);
@@ -49,5 +54,10 @@ public class LevelController : MonoBehaviour
         {
             winLabel.GetComponent<Animator>().SetBool("threeStar", true);
         }
+    }
+
+    public void playerLoseMenu()
+    {
+        loseLabel.GetComponent<Animator>().SetBool("playerLose", true);
     }
 }

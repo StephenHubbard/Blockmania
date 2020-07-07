@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -51,8 +52,20 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Level 1");
     }
 
-    public void LoadLevel2()
+    public void LoadWorldSelection()
     {
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene("World Selection");
+    }
+
+    public void LoadWorld1Selection()
+    {
+        SceneManager.LoadScene("World 1 Level Selection");
+    }
+
+    public void LoadLevel()
+    {
+        GameObject buttonSelected = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
+        string levelIndexString = buttonSelected.GetComponent<Text>().text;
+        SceneManager.LoadScene(levelIndexString);
     }
 }
