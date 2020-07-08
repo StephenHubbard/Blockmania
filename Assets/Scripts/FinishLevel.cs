@@ -28,6 +28,8 @@ public class FinishLevel : MonoBehaviour
         {
             GameSession gameSession = FindObjectOfType<GameSession>();
             gameSession.levelComplete = true;
+            PlayerSession playerSession = FindObjectOfType<PlayerSession>();
+            playerSession.isLevelCompleted();
         }
         else if (collision.tag == "Player")
         {

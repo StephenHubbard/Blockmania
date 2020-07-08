@@ -60,4 +60,16 @@ public class LevelController : MonoBehaviour
     {
         loseLabel.GetComponent<Animator>().SetBool("playerLose", true);
     }
+
+    public void LoadWorldSelection()
+    {
+        SceneManager.LoadScene("World Selection");
+    }
+
+    public void LoadWorldOneSelection()
+    {
+        SceneManager.LoadScene("World 1 Level Selection");
+    }
+
+    
 }

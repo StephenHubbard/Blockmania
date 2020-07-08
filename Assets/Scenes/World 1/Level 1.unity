@@ -2412,6 +2412,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2414115979256256400, guid: d5dbd5cd75a0afb4287306c1c8ef1cf2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadWorldOneSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414115979256256414, guid: d5dbd5cd75a0afb4287306c1c8ef1cf2,
+        type: 3}
+      propertyPath: m_Name
+      value: Level Select Button
+      objectReference: {fileID: 0}
     - target: {fileID: 2414115979331866737, guid: d5dbd5cd75a0afb4287306c1c8ef1cf2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2431,6 +2441,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -2126.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414115979951659540, guid: d5dbd5cd75a0afb4287306c1c8ef1cf2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414115979951659540, guid: d5dbd5cd75a0afb4287306c1c8ef1cf2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -45.000854
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414115979951659541, guid: d5dbd5cd75a0afb4287306c1c8ef1cf2,
+        type: 3}
+      propertyPath: m_Text
+      value: Level Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5dbd5cd75a0afb4287306c1c8ef1cf2, type: 3}

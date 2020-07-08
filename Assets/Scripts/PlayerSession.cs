@@ -24,46 +24,34 @@ public class PlayerSession : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        // SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        isLevelCompleted();
-    }
+    // void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // {
+    //  isLevelCompleted();
+    // }
 
-    private void isLevelCompleted()
+    public void isLevelCompleted()
     {
         Scene scene = SceneManager.GetActiveScene();
-        // print(scene.name);
 
         foreach (string eachLevel in completedLevels)
         {
             if (eachLevel.Contains(scene.name))
             {
+                print("level already completed");
                 return;
             }
-            else
-            {
-                completedLevels.Add(scene.name);
-            }
-
         }
 
         completedLevels.Add(scene.name);
-
-        foreach(string eachLevel in completedLevels)
-        {
-            print(eachLevel);
-        }
     }
 }
