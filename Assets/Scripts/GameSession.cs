@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GameSession : MonoBehaviour
     public bool levelComplete = false;
     public bool levelLose = false;
     private bool oneTime = true;
+
 
 
     private void Awake()
@@ -85,20 +87,21 @@ public class GameSession : MonoBehaviour
 
         if ((countdownText >= startTimer - threeStar) && oneTime == true)
         {
-                levelController.threeStarAnimation();
-                oneTime = false;
-                playerSession.playerStars += 3;
+            levelController.threeStarAnimation();
+            oneTime = false;
+            playerSession.evalLevel(3);
+            
         }
         else if (countdownText < startTimer - threeStar && countdownText >= startTimer  - twoStar) {
-                levelController.twoStarAnimation();
-                oneTime = false;
-                playerSession.playerStars += 2;
+            levelController.twoStarAnimation();
+            oneTime = false;
+            playerSession.evalLevel(2);
         }
         else
         {
-                levelController.oneStarAnimation();
-                oneTime = false;
-                playerSession.playerStars += 1;
+            levelController.oneStarAnimation();
+            oneTime = false;
+            playerSession.evalLevel(1);
         }
     }
 }

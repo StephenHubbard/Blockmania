@@ -4,5 +4,11 @@ level complete animation.
 
 save/load system. 
 
-bounce squares.
+bounce squares. 
+
+World 2 and 3.
+
+Different shapes.  Triangle Player?  Circle Player?
+
+Changing color blocks.  
 
